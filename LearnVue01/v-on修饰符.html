@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edeg">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <title>v-on修饰符</title>
+</head>
+<body>
+  <div id="app">
+    <div @click="divClick">
+      <button @click.stop="btnClick">点击</button>
+    </div>
+
+    <form action="baidu">
+      <input type="submit" value="提交" @click.prevent="submitClick">
+    </form>
+
+    <input type="text" name="" id="" @keyup.enter="keyup">
+  </div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {},
+    methods: {
+      divClick() {
+        console.log('divClick');
+      },
+      btnClick() {
+        console.log('btnClick');
+      },
+      submitClick() {
+        console.log('submitClick');
+      },
+      keyup() {
+        console.log('keyup');
+      }
+    }
+  });
+</script>
+</html>
